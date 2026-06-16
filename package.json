@@ -1,7 +1,22 @@
 {
   "name": "ph-date-utils",
   "version": "1.0.0",
-  "description": "Date utilities for Philippine holidays and business days",
+  "description": "Philippine date utilities — holidays, business days, formatting, timezone",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "lint": "eslint src/",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": ["philippines", "holidays", "business-days", "date", "timezone"],
   "author": "kon2raya",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.9.0",
+    "jest": "^30.0.0",
+    "@types/jest": "^30.0.0",
+    "ts-jest": "^29.0.0"
+  }
 }
