@@ -1,0 +1,7 @@
+{
+  "name": "ph-date-utils",
+  "version": "1.0.0",
+  "description": "Date utilities for Philippine holidays and business days",
+  "author": "kon2raya",
+  "license": "MIT"
+}
