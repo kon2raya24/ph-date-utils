@@ -1,7 +1,7 @@
 {
   "name": "ph-date-utils",
   "version": "1.0.0",
-  "description": "Philippine date utilities — holidays, business days, formatting, timezone",
+  "description": "Philippine date utilities \u2014 holidays, business days, formatting, timezone",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -24,5 +24,8 @@
     "jest": "^30.4.2",
     "ts-jest": "^29.4.11",
     "typescript": "^6.0.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
