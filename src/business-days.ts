@@ -10,6 +10,7 @@ import { PH_OFFSET_HOURS } from './constants';
  * @returns Number of business days
  */
 export function getPHBusinessDays(start: Date | string, end: Date | string): number {
+  if (start === null || start === undefined) throw new Error("Invalid input");
   const startDate = typeof start === 'string' ? new Date(start) : start;
   const endDate = typeof end === 'string' ? new Date(end) : end;
 
@@ -34,6 +35,7 @@ export function getPHBusinessDays(start: Date | string, end: Date | string): num
  * @returns New date with business days added
  */
 export function addPHBusinessDays(date: Date | string, days: number): Date {
+  if (date === null || date === undefined) throw new Error("Invalid input");
   const result = typeof date === 'string' ? new Date(date) : new Date(date);
   let added = 0;
 
@@ -54,6 +56,7 @@ export function addPHBusinessDays(date: Date | string, days: number): Date {
  * @returns The next business day
  */
 export function getNextBusinessDay(date: Date | string): Date {
+  if (date === null || date === undefined) throw new Error("Invalid input");
   const result = typeof date === 'string' ? new Date(date) : new Date(date);
 
   do {
@@ -70,6 +73,7 @@ export function getNextBusinessDay(date: Date | string): Date {
  * @returns True if the date is a business day
  */
 export function isBusinessDay(date: Date | string): boolean {
+  if (date === null || date === undefined) throw new Error("Invalid input");
   const d = typeof date === 'string' ? new Date(date) : date;
   return !isWeekend(d) && !isPHHoliday(d);
 }
@@ -81,6 +85,7 @@ export function isBusinessDay(date: Date | string): boolean {
  * @returns Date in Philippine timezone
  */
 export function utcToPH(date: Date | string): Date {
+  if (date === null || date === undefined) throw new Error("Invalid input");
   const d = typeof date === 'string' ? new Date(date) : new Date(date);
   return new Date(d.getTime() + PH_OFFSET_HOURS * 60 * 60 * 1000);
 }
@@ -92,6 +97,7 @@ export function utcToPH(date: Date | string): Date {
  * @returns Date in UTC
  */
 export function phToUTC(date: Date | string): Date {
+  if (date === null || date === undefined) throw new Error("Invalid input");
   const d = typeof date === 'string' ? new Date(date) : new Date(date);
   return new Date(d.getTime() - PH_OFFSET_HOURS * 60 * 60 * 1000);
 }
