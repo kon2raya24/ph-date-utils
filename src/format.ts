@@ -7,6 +7,7 @@ import { PH_TIMEZONE } from './constants';
  * @returns Formatted date string
  */
 export function formatPHDate(date: Date | string): string {
+  if (date === null || date === undefined) throw new Error("Invalid input");
   const d = typeof date === 'string' ? new Date(date) : date;
   return d.toLocaleDateString('en-PH', {
     year: 'numeric',
@@ -23,6 +24,7 @@ export function formatPHDate(date: Date | string): string {
  * @returns Formatted datetime string
  */
 export function formatPHDateTime(date: Date | string): string {
+  if (date === null || date === undefined) throw new Error("Invalid input");
   const d = typeof date === 'string' ? new Date(date) : date;
   return d.toLocaleString('en-PH', {
     year: 'numeric',
@@ -42,6 +44,7 @@ export function formatPHDateTime(date: Date | string): string {
  * @returns Formatted time string
  */
 export function formatPHTime(date: Date | string): string {
+  if (date === null || date === undefined) throw new Error("Invalid input");
   const d = typeof date === 'string' ? new Date(date) : date;
   return d.toLocaleTimeString('en-PH', {
     hour: '2-digit',
@@ -58,6 +61,7 @@ export function formatPHTime(date: Date | string): string {
  * @returns Long format date string
  */
 export function formatPHDateLong(date: Date | string): string {
+  if (date === null || date === undefined) throw new Error("Invalid input");
   const d = typeof date === 'string' ? new Date(date) : date;
   return d.toLocaleDateString('en-PH', {
     year: 'numeric',
@@ -74,6 +78,7 @@ export function formatPHDateLong(date: Date | string): string {
  * @returns Relative time string
  */
 export function formatRelativePH(date: Date | string): string {
+  if (date === null || date === undefined) throw new Error("Invalid input");
   const d = typeof date === 'string' ? new Date(date) : date;
   const now = new Date();
   const diffMs = now.getTime() - d.getTime();
@@ -97,6 +102,7 @@ export function formatRelativePH(date: Date | string): string {
  * @returns Database format date string
  */
 export function formatPHDateDB(date: Date | string): string {
+  if (date === null || date === undefined) throw new Error("Invalid input");
   const d = typeof date === 'string' ? new Date(date) : date;
   return d.toISOString().split('T')[0];
 }
