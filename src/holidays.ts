@@ -54,6 +54,7 @@ const HOLIDAY_MAP: Map<string, PHHoliday> = new Map(
  * @returns True if the date is a holiday
  */
 export function isPHHoliday(date: Date | string): boolean {
+  if (date === null || date === undefined) throw new Error("Invalid input");
   const dateStr = normalizeDateStr(date);
   return HOLIDAY_MAP.has(dateStr);
 }
@@ -64,6 +65,7 @@ export function isPHHoliday(date: Date | string): boolean {
  * @returns Holiday name or null if not a holiday
  */
 export function getHolidayName(date: Date | string): string | null {
+  if (date === null || date === undefined) throw new Error("Invalid input");
   const dateStr = normalizeDateStr(date);
   const holiday = HOLIDAY_MAP.get(dateStr);
   return holiday?.name ?? null;
@@ -76,6 +78,7 @@ export function getHolidayName(date: Date | string): string | null {
  * @returns Array of holidays in the range
  */
 export function getHolidaysInRange(start: Date | string, end: Date | string): PHHoliday[] {
+  if (start === null || start === undefined) throw new Error("Invalid input");
   const startDate = new Date(start);
   const endDate = new Date(end);
 
@@ -91,6 +94,7 @@ export function getHolidaysInRange(start: Date | string, end: Date | string): PH
  * @returns True if the date is a weekend
  */
 export function isWeekend(date: Date | string): boolean {
+  if (date === null || date === undefined) throw new Error("Invalid input");
   const d = typeof date === 'string' ? new Date(date) : date;
   const day = d.getDay();
   return day === 0 || day === 6;
@@ -102,6 +106,7 @@ export function isWeekend(date: Date | string): boolean {
  * @returns Array of regular holidays
  */
 export function getRegularHolidays(year: number): PHHoliday[] {
+  if (year === null || year === undefined) throw new Error("Invalid input");
   return REGULAR_HOLIDAYS.filter(h => h.date.startsWith(String(year)));
 }
 
@@ -111,6 +116,7 @@ export function getRegularHolidays(year: number): PHHoliday[] {
  * @returns Array of special holidays
  */
 export function getSpecialHolidays(year: number): PHHoliday[] {
+  if (year === null || year === undefined) throw new Error("Invalid input");
   return SPECIAL_HOLIDAYS.filter(h => h.date.startsWith(String(year)));
 }
 
@@ -120,6 +126,7 @@ export function getSpecialHolidays(year: number): PHHoliday[] {
  * @returns True if the date is a regular holiday
  */
 export function isRegularHoliday(date: Date | string): boolean {
+  if (date === null || date === undefined) throw new Error("Invalid input");
   const dateStr = normalizeDateStr(date);
   return REGULAR_HOLIDAYS.some(h => h.date === dateStr);
 }
@@ -130,6 +137,7 @@ export function isRegularHoliday(date: Date | string): boolean {
  * @returns True if the date is a special holiday
  */
 export function isSpecialHoliday(date: Date | string): boolean {
+  if (date === null || date === undefined) throw new Error("Invalid input");
   const dateStr = normalizeDateStr(date);
   return SPECIAL_HOLIDAYS.some(h => h.date === dateStr);
 }
