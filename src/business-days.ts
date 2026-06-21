@@ -4,6 +4,9 @@ import { PH_OFFSET_HOURS } from './constants';
 // Type exports for consumers
 // Add specific types as needed
 
+// Type exports for consumers
+// Add specific types as needed
+
 /**
  * Calculate Philippine business days between two dates
  * Excludes weekends and Philippine holidays
